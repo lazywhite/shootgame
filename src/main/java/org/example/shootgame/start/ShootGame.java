@@ -24,9 +24,9 @@ public class ShootGame {
         File x  = new File("images/background.png");
         System.out.println(x.canRead());
 
-         */
         File x2  = new File("background.png");
         System.out.println(x2.canRead());
+         */
         try {
             GameConfig.background = ImageIO.read(new File("images/background.png"));
             GameConfig.start = ImageIO.read(new File("images/start.png"));
