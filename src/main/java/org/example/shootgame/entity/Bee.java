@@ -1,10 +1,8 @@
 package org.example.shootgame.entity;
 
+import org.example.shootgame.lib.Image;
 import org.example.shootgame.start.GameConfig;
 
-import javax.imageio.ImageIO;
-import java.io.File;
-import java.io.IOException;
 import java.util.Random;
 
 /**
@@ -17,11 +15,7 @@ public class Bee extends Item implements Award {
     private String xdir;
 
     public Bee(){
-        try {
-            this.image = ImageIO.read(new File("images/bee.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.image = Image.loadImage("images/bee.png");
         this.width = this.image.getWidth();
         this.height = this.image.getHeight();
         this.y = - this.height;

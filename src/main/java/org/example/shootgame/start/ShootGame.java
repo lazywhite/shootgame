@@ -1,13 +1,11 @@
 package org.example.shootgame.start;
 
 import org.example.shootgame.entity.*;
+import org.example.shootgame.lib.Image;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.File;
-import java.io.IOException;
 
 import java.util.*;
 import java.util.Timer;
@@ -18,31 +16,20 @@ import java.util.Timer;
  */
 public class ShootGame {
 
-    static{
-
-        /*
-        File x  = new File("images/background.png");
-        System.out.println(x.canRead());
-
-        File x2  = new File("background.png");
-        System.out.println(x2.canRead());
-         */
-        try {
-            GameConfig.background = ImageIO.read(new File("images/background.png"));
-            GameConfig.start = ImageIO.read(new File("images/start.png"));
-            GameConfig.pause = ImageIO.read(new File("images/pause.png"));
-            GameConfig.gameover = ImageIO.read(new File("images/gameover.png"));
-            GameConfig.plane = new Plane();
-            GameConfig.gp = new GamePanel();
-            GameConfig.bullets = new ArrayList<Bullet>();
-            GameConfig.minionBullets = new ArrayList<MinionBullet>();
-            GameConfig.minions = new ArrayList<Minion>();
-            GameConfig.bees = new ArrayList<Bee>();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    static {
+        GameConfig.background = Image.loadImage("images/background.png");
+        GameConfig.start = Image.loadImage("images/start.png");
+        GameConfig.pause = Image.loadImage("images/pause.png");
+        GameConfig.gameover = Image.loadImage("images/gameover.png");
+        GameConfig.plane = new Plane();
+        GameConfig.gp = new GamePanel();
+        GameConfig.bullets = new ArrayList<Bullet>();
+        GameConfig.minionBullets = new ArrayList<MinionBullet>();
+        GameConfig.minions = new ArrayList<Minion>();
+        GameConfig.bees = new ArrayList<Bee>();
     }
+
+
 
     public static void main(String[] args) {
         ShootGame game = new ShootGame();

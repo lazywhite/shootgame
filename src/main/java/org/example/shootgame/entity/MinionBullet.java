@@ -1,10 +1,8 @@
 package org.example.shootgame.entity;
 
 import org.example.shootgame.start.GameConfig;
+import org.example.shootgame.lib.Image;
 
-import javax.imageio.ImageIO;
-import java.io.File;
-import java.io.IOException;
 
 /**
  * Created by white on 17/6/9.
@@ -24,11 +22,7 @@ public class MinionBullet extends Item {
     public MinionBullet(int x, int y){
         this.x = x;
         this.y = y;
-        try {
-            this.image = ImageIO.read(new File("images/bullet.png")) ;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.image = Image.loadImage("images/bullet.png");
         this.width = this.image.getWidth();
         this.height = this.image.getHeight();
     }

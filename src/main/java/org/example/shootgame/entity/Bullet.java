@@ -1,8 +1,6 @@
 package org.example.shootgame.entity;
 
-import javax.imageio.ImageIO;
-import java.io.File;
-import java.io.IOException;
+import org.example.shootgame.lib.Image;
 
 /**
  * Created by white on 17/6/9.
@@ -22,11 +20,7 @@ public class Bullet extends Item {
     public Bullet(int x, int y){
         this.x = x;
         this.y = y;
-        try {
-            this.image = ImageIO.read(new File("images/bullet1.png")) ;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.image = Image.loadImage("images/bullet1.png") ;
         this.width = this.image.getWidth();
         this.height = this.image.getHeight();
     }

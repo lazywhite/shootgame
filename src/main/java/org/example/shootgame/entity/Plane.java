@@ -1,11 +1,9 @@
 package org.example.shootgame.entity;
 
+import org.example.shootgame.lib.Image;
 import org.example.shootgame.start.GameConfig;
 
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,12 +44,8 @@ public class Plane extends Item {
     public Plane(){
         this.life = 3;
         this.images = new BufferedImage[2];
-        try {
-            images[0] = ImageIO.read(new File("images/plane01.png"));
-            images[1] = ImageIO.read(new File("images/plane02.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        images[0] = Image.loadImage("images/plane01.png");
+        images[1] = Image.loadImage("images/plane02.png");
         this.image = this.images[0];
         this.width = this.image.getWidth();
         this.height = this.image.getHeight();

@@ -1,10 +1,7 @@
 package org.example.shootgame.entity;
 
+import org.example.shootgame.lib.Image;
 import org.example.shootgame.start.GameConfig;
-
-import javax.imageio.ImageIO;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -18,11 +15,7 @@ public class Minion extends Item implements Enemy {
     private String xdir;
 
     public Minion(){
-        try {
-            this.image = ImageIO.read(new File("images/minion.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.image = Image.loadImage("images/minion.png");
         this.width = this.image.getWidth();
         this.height = this.image.getHeight();
         this.y = -this.height;

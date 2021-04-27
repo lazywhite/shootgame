@@ -3,10 +3,8 @@ package org.example.shootgame.start;
 import org.example.shootgame.entity.*;
 
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
-import java.util.concurrent.locks.ReadWriteLock;
+
 
 /**
  * Created by white on 17/6/8.
